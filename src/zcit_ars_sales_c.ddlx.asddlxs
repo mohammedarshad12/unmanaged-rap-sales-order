@@ -1,0 +1,125 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: {
+    typeName: 'Sales Order',
+    typeNamePlural: 'Sales Orders',
+    title: {
+      type: #STANDARD,
+      value: 'SalesDocument'
+    }
+  }
+}
+
+annotate entity ZCIT_ARS_SALES_C with
+{
+
+  @UI.facet: [
+    {
+      id: 'SalesHeader',
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Sales Details',
+      position: 10
+    },
+    {
+      id: 'SalesItems',
+      type: #LINEITEM_REFERENCE,
+      targetElement: '_salesitem',
+      label: 'Item Details',
+      position: 20
+    }
+  ]
+
+  @EndUserText.label: 'Sales Document'
+  @UI: {
+      lineItem: [{position:10}],
+      identification:[{position:10}],
+      selectionField:[{position:10}]
+  }
+  Salesdocument;
+
+  @EndUserText.label: 'Document Type'
+  @UI: {
+      lineItem:[{position:20}],
+      identification:[{position:20}],
+      selectionField:[{position:20}]
+  }
+  Salesdocumenttype;
+
+  @EndUserText.label: 'Order Reason'
+  @UI: {
+      lineItem:[{position:30}],
+      identification:[{position:30}],
+      selectionField:[{position:30}]
+  }
+  Orderreason;
+
+  @EndUserText.label: 'Sales Organization'
+  @UI: {
+      lineItem:[{position:40}],
+      identification:[{position:40}]
+  }
+  Salesorganization;
+
+  @EndUserText.label: 'Distribution Channel'
+  @UI: {
+      lineItem:[{position:50}],
+      identification:[{position:50}],
+      selectionField:[{position:50}]
+  }
+  Distributionchannel;
+
+  @EndUserText.label: 'Division'
+  @UI: {
+      lineItem:[{position:60}],
+      identification:[{position:60}],
+      selectionField:[{position:60}]
+  }
+  Division;
+
+  @EndUserText.label: 'Sales Office'
+  @UI: {
+      lineItem:[{position:70}],
+      identification:[{position:70}],
+      selectionField:[{position:70}]
+  }
+  Salesoffice;
+
+  @EndUserText.label: 'Sales Group'
+  @UI: {
+      lineItem:[{position:80}],
+      identification:[{position:80}]
+  }
+  Salesgroup;
+
+  @EndUserText.label: 'Net Price'
+  @UI: {
+      lineItem:[{position:90}],
+      identification:[{position:90}]
+  }
+  Netprice;
+
+  @EndUserText.label: 'Currency'
+  @UI: {
+      lineItem:[{position:100}],
+      identification:[{position:100}]
+  }
+  Currency;
+
+  @EndUserText.label: 'Created By'
+  @UI.identification:[{position:110}]
+  LocalCreatedBy;
+
+  @EndUserText.label: 'Created At'
+  @UI.identification:[{position:120}]
+  LocalCreatedAt;
+
+  @EndUserText.label: 'Last Changed By'
+  @UI.identification:[{position:130}]
+  LocalLastChangedBy;
+
+  @EndUserText.label: 'Last Changed At'
+  @UI.identification:[{position:140}]
+  LocalLastChangedAt;
+
+}

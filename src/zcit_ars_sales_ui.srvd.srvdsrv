@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition for Sales Order'
+define service ZCIT_ARS_SALES_UI {
+  expose ZCIT_ARS_SALES_C;
+  expose ZCIT_ARS_SALES_O_C;
+}

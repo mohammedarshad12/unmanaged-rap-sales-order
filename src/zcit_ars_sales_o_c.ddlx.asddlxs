@@ -1,0 +1,76 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: {
+    typeName: 'Sales Item',
+    typeNamePlural: 'Sales Items',
+    title: {
+      type: #STANDARD,
+      value: 'SalesItemNumber'
+    }
+  }
+}
+
+annotate entity ZCIT_ARS_SALES_O_C with
+{
+
+  @UI.facet: [
+    {
+      id: 'ItemDetails',
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Sales Item Details',
+      position: 10
+    }
+  ]
+
+  @EndUserText.label: 'Sales Document'
+  @UI: {
+      lineItem:[{position:10}],
+      identification:[{position:10}]
+  }
+  Salesdocument;
+
+  @EndUserText.label: 'Sales Item'
+  @UI: {
+      lineItem:[{position:20}],
+      identification:[{position:20}]
+  }
+  Salesitemnumber;
+
+  @EndUserText.label: 'Material'
+  @UI: {
+      lineItem:[{position:30}],
+      identification:[{position:30}]
+  }
+  Material;
+
+  @EndUserText.label: 'Plant'
+  @UI: {
+      lineItem:[{position:40}],
+      identification:[{position:40}]
+  }
+  Plant;
+
+  @EndUserText.label: 'Quantity'
+  @UI: {
+      lineItem:[{position:50}],
+      identification:[{position:50}]
+  }
+  Quantity;
+
+  @UI.hidden: true
+  Quantityunits;
+
+  @UI.hidden: true
+  LocalCreatedBy;
+
+  @UI.hidden: true
+  LocalCreatedAt;
+
+  @UI.hidden: true
+  LocalLastChangedBy;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}
